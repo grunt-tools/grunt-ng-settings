@@ -31,8 +31,6 @@ module.exports = function(grunt) {
       file: 'settings.yml'
     });
 
-    // console.log('ngSettings', this, arguments);
-
     var dotFile = options.file.split('.'),
         ext = dotFile.pop(),
         defaultFile = options.defaultFile || dotFile.concat('default').concat(ext).join('.');
@@ -61,32 +59,6 @@ module.exports = function(grunt) {
     console.log('settings', '\'' + dest + '\'', JSON.stringify(settings, null, 4) );
 
     grunt.file.write( path.join(dest, 'ng-settings.js'), 'angular.module(\'ng.settings\',[]).constant(\'settings\',' + JSON.stringify(settings) + ');' );
-
-    // Iterate over all specified file groups.
-    // this.files.forEach(function(f) {
-    //   // Concat specified files.
-    //   var src = f.src.filter(function(filepath) {
-    //     // Warn on and remove invalid source files (if nonull was set).
-    //     if (!grunt.file.exists(filepath)) {
-    //       grunt.log.warn('Source file "' + filepath + '" not found.');
-    //       return false;
-    //     } else {
-    //       return true;
-    //     }
-    //   }).map(function(filepath) {
-    //     // Read file source.
-    //     return grunt.file.read(filepath);
-    //   }).join(grunt.util.normalizelf(options.separator));
-    //
-    //   // Handle options.
-    //   src += options.punctuation;
-    //
-    //   // Write the destination file.
-    //   grunt.file.write(f.dest, src);
-    //
-    //   // Print a success message.
-    //   grunt.log.writeln('File "' + f.dest + '" created.');
-    // });
   });
 
 };
