@@ -1,0 +1,8 @@
+common:
+  foo: var
+
+dev:
+  text: this is for dev
+
+dist:
+  text: this is for dist

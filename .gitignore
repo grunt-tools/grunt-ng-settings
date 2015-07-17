@@ -1,0 +1,8 @@
+/node_modules
+/ng-settings.js
+/test/ng-settings.js
+/settings.yml
+/settings.json
+/settings.cson
+npm-debug.log
+tmp
