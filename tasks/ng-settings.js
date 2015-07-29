@@ -37,11 +37,13 @@ module.exports = function(grunt) {
 
     if( !grunt.file.exists(options.file) ) {
 
-      if( !grunt.file.exists(defaultFile) ) {
-        throw new Error('default file: ' + defaultFile + ' is not found');
+      if( !options.defaultFile ) {
+        grunt.fail.fatal('file: ' + options.file + ' is not found');
+      } else if( !grunt.file.exists(defaultFile) ) {
+        grunt.fail.fatal('default file: ' + defaultFile + ' is not found');
+      } else {
+        grunt.file.copy( defaultFile, options.file, { noProcess: true });
       }
-
-      grunt.file.copy( defaultFile, options.file, { noProcess: true });
 
     }
 
@@ -55,8 +57,6 @@ module.exports = function(grunt) {
     }
 
     settings = _.merge({}, settings.common || {}, settings[this.target] );
-
-    console.log('settings', '\'' + dest + '\'', JSON.stringify(settings, null, 4) );
 
     grunt.file.write( path.join(dest, 'ng-settings.js'), 'angular.module(\'ng.settings\',[]).constant(\'settings\',' + JSON.stringify(settings) + ');' );
   });

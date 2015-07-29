@@ -29,12 +29,21 @@ exports.ngSettings = {
   },
   dev: function(test) {
 
-    test.expect( grunt.file.readYAML('ng-settings.yml') === '' );
+    test.expect(3);
+
+    test.equal( grunt.file.exists('settings.yml'), true );
+    test.equal( grunt.file.exists('ng-settings.js'), true );
+    test.equal( grunt.file.read('ng-settings.js'), 'angular.module(\'ng.settings\',[]).constant(\'settings\',{"foo":"var","text":"this is for dev"});' );
 
     test.done();
   },
   dist: function(test) {
-    test.expect(1);
+
+    test.expect(3);
+
+    test.equal( grunt.file.exists('settings.yml'), true );
+    test.equal( grunt.file.exists('test/ng-settings.js'), true );
+    test.equal( grunt.file.read('test/ng-settings.js'), 'angular.module(\'ng.settings\',[]).constant(\'settings\',{"foo":"var","text":"this is for dist"});' );
 
     test.done();
   },

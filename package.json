@@ -1,7 +1,7 @@
 {
   "name": "grunt-ng-settings",
   "description": "Automation of reading settings and generate angular module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/jstools/grunt-ng-settings",
   "author": {
     "name": "Jesús Germade",
