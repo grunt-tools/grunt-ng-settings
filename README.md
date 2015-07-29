@@ -1,4 +1,4 @@
-# grunt-ng-settings
+# grunt-ng-settings [![wercker status](https://app.wercker.com/status/e1c9f5bf278f85890cb7dd5257b77eb0/s/master "wercker status")](https://app.wercker.com/project/bykey/e1c9f5bf278f85890cb7dd5257b77eb0)
 
 > Automation of reading settings and generate angular module
 
@@ -32,7 +32,8 @@ grunt.initConfig({
 
   ngSettings: {
     options: {
-      file: 'settings.yml'
+      file: 'settings.yml',
+      defaultFile: true
     },
     dev: {
       dest: '<%= dir.dev %>'
