@@ -1,4 +1,4 @@
-box: ubuntu12.04-nodejs0.10
+box: node#0.12
 # Build definition
 build:
   # The steps that will be executed on build
