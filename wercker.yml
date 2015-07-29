@@ -1,4 +1,4 @@
-box: node
+box: node@0.12
 # Build definition
 build:
   # The steps that will be executed on build
