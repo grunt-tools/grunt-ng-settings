@@ -50,7 +50,7 @@ module.exports = function(grunt) {
     var settings = readFile[ext]( options.file ),
         _ = require('jengine-utils'),
         path = require('path'),
-        dest = grunt.config.process(this.data.dest);
+        dest = grunt.config.process(this.data.dest) || '.';
 
     if( settings[this.target] === undefined ) {
       console.warn('\'' + this.target + '\' not found in settings');
